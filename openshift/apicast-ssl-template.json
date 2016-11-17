@@ -174,8 +174,7 @@
                                     "exec": {
                                         "command": [
                                             "/bin/bash",
-                                            "-c",
-                                            "/etc/nginx-secret-volume/postCommit-script.sh"
+                                            "/etc/nginx-secret-volume/post-configure"
                                         ]
                                     },
                                     "initialDelaySeconds": 30,
