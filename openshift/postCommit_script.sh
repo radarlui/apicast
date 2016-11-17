@@ -1,0 +1,1 @@
+if ! grep -q 'listen 8443 ssl;' /opt/openresty/nginx/conf/nginx.conf ; then /usr/bin/sed -i 's|listen 8080;|listen 8080;\\n listen 8443 ssl;\\nssl_certificate /etc/nginx-secret-volume/3scale-gateway.crt;\\nssl_certificate_key /etc/nginx-secret-volume/3scale-gateway.key;\\nssl_protocols TLSv1 TLSv1.1 TLSv1.2;|' /opt/openresty/nginx/conf/nginx.conf ; pkill -HUP -o nginx; fi;
